@@ -22,11 +22,9 @@ if(WIN32)
     target_link_libraries(sdlDemo SDL2::SDL2 SDL2::SDL2main)
 
 elseif(UNIX)
-    project(sdlDemo)
     set(SourceFiles main.cpp)
     find_package(SDL2 REQUIRED)
     include_directories(${SDL2_INCLUDE_DIRS})
-    add_executable(${PROJECT_NAME} ${SourceFiles})
     Target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
 endif()
 
