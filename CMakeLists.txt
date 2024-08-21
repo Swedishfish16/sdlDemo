@@ -12,4 +12,4 @@ endif()
 project ("sdlDemo")
 
 # Include sub-projects.
-add_subdirectory ("sdlDemo")
+add_subdirectory ("src")
