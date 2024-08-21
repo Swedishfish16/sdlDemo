@@ -1,0 +1,53 @@
+## Ignore build directories
+build/
+out/
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore CMake build and configuration files
+CMakeFiles/
+CMakeCache.txt
+CMakePresets.json
+*.cmake
+
+# Ignore IDE-specific files
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore binaries and object files
+*.exe
+*.dll
+*.so
+*.o
+*.obj
+*.pdb
+*.lib
+
+# Ignore assets directory if it should not be versioned
+# assets/
+
+# Ignore any other generated or unnecessary files
+*.log
+*.db
+*.suo
+*.sln
+*.ncb
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.ordata
+*.jfm
+*.pdb
+
