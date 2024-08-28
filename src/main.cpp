@@ -4,12 +4,14 @@
 *3. 
 */
 
+// third-party libraries
 #ifdef _WIN32
 #include <SDL.h>
 #else
 #include<SDL2/SDL.h>
 #endif
 
+// C++ libraries
 #include <iostream>
 #include <string>
 
@@ -30,8 +32,8 @@ int main(int argc, char* argv[]) {
 	//Create application window with the following settings
 	window = SDL_CreateWindow( 
 		"Game Demo",
-		0,
-		5000,
+		SDL_WINDOWPOS_CENTERED,
+		SDL_WINDOWPOS_CENTERED,
 		640,
 		480,
 		SDL_WINDOW_SHOWN
@@ -59,10 +61,19 @@ int main(int argc, char* argv[]) {
 			//		std::cout << "The up key was pressed!\n";
 			//	}
 			
-			// 
+			// Handle keyboard events with keyboard state
 			const Uint8* state = SDL_GetKeyboardState(NULL);
 			if(state[SDL_SCANCODE_RIGHT]){
 				std::cout << "Right arrow key pressed!\n";
+			}
+			else if (state[SDL_SCANCODE_LEFT]) {
+				std::cout << "Left arrow key pressed!\n";
+			}
+			else if (state[SDL_SCANCODE_UP]) {
+				std::cout << "Up arrow key pressed!\n";
+			}
+			else if (state[SDL_SCANCODE_DOWN]) {
+				std::cout << "Down arrow key pressed!\n";
 			}
 	
 		}
@@ -80,3 +91,8 @@ int main(int argc, char* argv[]) {
 
 	return 0;
 }
+
+/********** Some notes
+* There's alot of using raw pointers and having to manually allocate and 
+deallocate memory in sdl, this is due to the sdl library being written in C.
+**********/
